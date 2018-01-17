@@ -35,23 +35,50 @@ export default class App extends Component<{}> {
       <View style={styles.container}>
         <TabNavigator>
           <TabNavigator.Item
-              selected={this.state.selectedTab === 'home'}
+              selected={this.state.selectedTab === 'tab_0'}
               selectedTitleStyle={{color:'red'}}
-              title="Home"
+              title="首页"
               renderIcon={() => <Image style={styles.image} source={require('./res/images/ic_polular.png')} />}
               renderSelectedIcon={() => <Image style={[styles.image,{tintColor:'red'}]} source={require('./res/images/ic_polular.png')} />}
               badgeText="1"
-              onPress={() => this.setState({ selectedTab: 'home' })}>
+              onPress={() => this.setState({ selectedTab: 'tab_0' })}>
+            <View style={styles.page0}></View>
+          </TabNavigator.Item>
+          <TabNavigator.Item
+              selected={this.state.selectedTab === 'tab_1'}
+              selectedTitleStyle={{color:'yellow'}}
+              title="购彩"
+              renderIcon={() => <Image style={styles.image} source={require('./res/images/ic_polular.png')} />}
+              renderSelectedIcon={() => <Image style={[styles.image,{tintColor:'yellow'}]} source={require('./res/images/ic_polular.png')} />}
+              onPress={() => this.setState({ selectedTab: 'tab_1' })}>
             <View style={styles.page1}></View>
           </TabNavigator.Item>
           <TabNavigator.Item
-              selected={this.state.selectedTab === 'profile'}
-              selectedTitleStyle={{color:'yellow'}}
-              title="Profile"
+              selected={this.state.selectedTab === 'tab_2'}
+              selectedTitleStyle={{color:'blue'}}
+              title="开奖"
               renderIcon={() => <Image style={styles.image} source={require('./res/images/ic_polular.png')} />}
-              renderSelectedIcon={() => <Image style={[styles.image,{tintColor:'yellow'}]} source={require('./res/images/ic_polular.png')} />}
-              onPress={() => this.setState({ selectedTab: 'profile' })}>
+              renderSelectedIcon={() => <Image style={[styles.image,{tintColor:'blue'}]} source={require('./res/images/ic_polular.png')} />}
+              onPress={() => this.setState({ selectedTab: 'tab_2' })}>
             <View style={styles.page2}></View>
+          </TabNavigator.Item>
+          <TabNavigator.Item
+              selected={this.state.selectedTab === 'tab_3'}
+              selectedTitleStyle={{color:'orange'}}
+              title="聊天"
+              renderIcon={() => <Image style={styles.image} source={require('./res/images/ic_polular.png')} />}
+              renderSelectedIcon={() => <Image style={[styles.image,{tintColor:'orange'}]} source={require('./res/images/ic_polular.png')} />}
+              onPress={() => this.setState({ selectedTab: 'tab_3' })}>
+            <View style={styles.page3}></View>
+          </TabNavigator.Item>
+          <TabNavigator.Item
+              selected={this.state.selectedTab === 'tab_4'}
+              selectedTitleStyle={{color:'red'}}
+              title="我的"
+              renderIcon={() => <Image style={styles.image} source={require('./res/images/ic_polular.png')} />}
+              renderSelectedIcon={() => <Image style={[styles.image,{tintColor:'red'}]} source={require('./res/images/ic_polular.png')} />}
+              onPress={() => this.setState({ selectedTab: 'tab_4' })}>
+            <View style={styles.page4}></View>
           </TabNavigator.Item>
         </TabNavigator>
       </View>
@@ -65,13 +92,25 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5FCFF',
   },
 
-    page1:{
+    page0:{
     flex: 1,
     backgroundColor: 'red',
     },
 
-    page2:{
+    page1:{
     flex: 1,
+        backgroundColor:'green',
+    },
+    page2:{
+        flex: 1,
+        backgroundColor:'blue',
+    },
+    page3:{
+        flex: 1,
+        backgroundColor:'orange',
+    },
+    page4:{
+        flex: 1,
         backgroundColor:'green',
     },
     image:{
