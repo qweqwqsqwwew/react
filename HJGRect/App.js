@@ -36,18 +36,20 @@ export default class App extends Component<{}> {
         <TabNavigator>
           <TabNavigator.Item
               selected={this.state.selectedTab === 'home'}
+              selectedTitleStyle={{color:'red'}}
               title="Home"
-              renderIcon={() => <Image source={require('./res/images/ic_polular.png')} />}
-              renderSelectedIcon={() => <Image source={require('./res/images/ic_polular.png')} />}
+              renderIcon={() => <Image style={styles.image} source={require('./res/images/ic_polular.png')} />}
+              renderSelectedIcon={() => <Image style={[styles.image,{tintColor:'red'}]} source={require('./res/images/ic_polular.png')} />}
               badgeText="1"
               onPress={() => this.setState({ selectedTab: 'home' })}>
             <View style={styles.page1}></View>
           </TabNavigator.Item>
           <TabNavigator.Item
               selected={this.state.selectedTab === 'profile'}
+              selectedTitleStyle={{color:'yellow'}}
               title="Profile"
-              renderIcon={() => <Image source={require('./res/images/ic_polular.png')} />}
-              renderSelectedIcon={() => <Image source={require('./res/images/ic_polular.png')} />}
+              renderIcon={() => <Image style={styles.image} source={require('./res/images/ic_polular.png')} />}
+              renderSelectedIcon={() => <Image style={[styles.image,{tintColor:'yellow'}]} source={require('./res/images/ic_polular.png')} />}
               onPress={() => this.setState({ selectedTab: 'profile' })}>
             <View style={styles.page2}></View>
           </TabNavigator.Item>
@@ -72,5 +74,9 @@ const styles = StyleSheet.create({
     flex: 1,
         backgroundColor:'green',
     },
+    image:{
+    width:22,
+        height:22,
+    }
 });
 
