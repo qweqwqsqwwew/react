@@ -24,6 +24,7 @@ export default class SectionListBasics extends Component {
   }
 }
 
+
 const styles = StyleSheet.create({
   container: {
    flex: 1,
